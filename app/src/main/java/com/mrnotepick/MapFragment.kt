@@ -5,6 +5,7 @@ import android.support.v4.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import com.google.android.gms.maps.SupportMapFragment
 
 class MapFragment : Fragment() {
 
@@ -12,5 +13,12 @@ class MapFragment : Fragment() {
                               container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {
         return inflater?.inflate(R.layout.fragment_map, container, false)
+    }
+
+    override fun onStart() {
+        super.onStart()
+        val supportMapFragment = SupportMapFragment()
+        activity.supportFragmentManager.beginTransaction().add(R.id.mapFrameLayout, supportMapFragment).commit()
+        supportMapFragment.getMapAsync { println("Map Initialized") }
     }
 }
