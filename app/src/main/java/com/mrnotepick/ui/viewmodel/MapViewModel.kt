@@ -1,17 +1,19 @@
 package com.mrnotepick.ui.viewmodel
 
-import com.mrnotepick.DependencyInjector
-import com.mrnotepick.domain.interactor.CreateNoteInteractor
 import com.mrnotepick.domain.interactor.InteractorFactory
 
 
 class MapViewModel {
 
-    private var messageString: String = ""
+    private var noteMessage: String = ""
 
     ////
 
+    fun noteMessageChanged(note: String) {
+        this.noteMessage = note
+    }
+
     fun createNote() {
-        InteractorFactory.provideCreateNoteInteractor().execute(messageString)
+        InteractorFactory.provideCreateNoteInteractor().execute(noteMessage)
     }
 }

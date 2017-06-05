@@ -15,7 +15,22 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
+        android:layout_toLeftOf="@+id/createNoteButton"
+        android:layout_toStartOf="@+id/createNoteButton"
+        android:layout_alignBottom="@id/createNoteButton"
         android:hint="Enter Note Here"
+        android:background="@android:color/white"
+        android:visibility="gone"
+        tools:visibility="visible" />
+
+    <Button
+        android:id="@+id/createNoteButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:text="Create"
         android:visibility="gone"
         tools:visibility="visible" />
 
