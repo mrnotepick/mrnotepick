@@ -10,5 +10,9 @@ class InteractorFactory {
         fun provideCreateNoteInteractor(): CreateNoteInteractor {
             return CreateNoteInteractor(DependencyInjector.provideNoteRepository())
         }
+
+        fun provideUpdateUserLocationInteractor(): UpdateUserLocationInteractor {
+            return UpdateUserLocationInteractor()
+        }
     }
 }
