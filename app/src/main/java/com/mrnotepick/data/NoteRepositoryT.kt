@@ -8,7 +8,7 @@ import io.reactivex.schedulers.Schedulers
 import java.util.*
 
 
-class NoteRepositoryTest : NoteRepository {
+class NoteRepositoryT : NoteRepository {
 
     val notes = ArrayList<Note>()
 
