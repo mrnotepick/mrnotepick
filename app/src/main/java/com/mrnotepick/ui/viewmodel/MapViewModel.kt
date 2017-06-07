@@ -1,6 +1,7 @@
 package com.mrnotepick.ui.viewmodel
 
-import com.mrnotepick.domain.entity.Location
+import com.mrnotepick.domain.entity.UserLocation
+import com.mrnotepick.domain.entity.Note
 import com.mrnotepick.domain.interactor.InteractorFactory
 
 
@@ -27,7 +28,13 @@ class MapViewModel {
 
     //// PRIVATE
 
-    private fun onLocationUpdated(location: Location) {
-        // TODO Check If Note In Range
+    private fun onLocationUpdated(userLocation: UserLocation) {
+        println("$userLocation")
+        InteractorFactory.provideGetNotesInRangeInteractor().execute(userLocation)
+                .subscribe { note -> onNoteInRange(note) }
+    }
+
+    private fun onNoteInRange(note: Note) {
+        println("$note")
     }
 }

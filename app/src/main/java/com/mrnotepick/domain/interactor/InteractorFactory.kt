@@ -14,5 +14,9 @@ class InteractorFactory {
         fun provideSubscribeForLocationUpdateInteractor(): SubscribeForLocationUpdateInteractor {
             return SubscribeForLocationUpdateInteractor(DependencyInjector.provideLocationService())
         }
+
+        fun provideGetNotesInRangeInteractor(): GetNotesInRangeInteractor {
+            return GetNotesInRangeInteractor(DependencyInjector.provideNoteRepository())
+        }
     }
 }

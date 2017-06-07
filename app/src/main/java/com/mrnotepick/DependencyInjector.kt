@@ -1,6 +1,8 @@
 package com.mrnotepick
 
+import android.content.Context
 import com.mrnotepick.data.NoteRepositoryT
+import com.mrnotepick.device.LocationServiceGFA
 import com.mrnotepick.device.LocationServiceT
 import com.mrnotepick.domain.LocationService
 import com.mrnotepick.domain.repository.NoteRepository
@@ -21,7 +23,7 @@ class DependencyInjector {
         }
 
         fun provideLocationService(): LocationService {
-            if (locationService == null) locationService = LocationServiceT()
+            if (locationService == null) locationService = LocationServiceGFA(App.context)
             return locationService!!
         }
     }

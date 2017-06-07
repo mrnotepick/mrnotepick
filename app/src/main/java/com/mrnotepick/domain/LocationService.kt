@@ -1,10 +1,10 @@
 package com.mrnotepick.domain
 
-import com.mrnotepick.domain.entity.Location
+import com.mrnotepick.domain.entity.UserLocation
 import io.reactivex.Observable
 
 
 interface LocationService {
 
-    fun subscribeForUpdate(): Observable<Location>
+    fun subscribeForUpdate(): Observable<UserLocation>
 }
